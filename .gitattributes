@@ -5,3 +5,9 @@
 *.bin filter=lfs diff=lfs merge=lfs -text
 *.xclbin filter=lfs diff=lfs merge=lfs -text
 *.elf filter=lfs diff=lfs merge=lfs -text
+
+# Store ve2 PVT payloads as regular git blobs so Yocto can clone
+# them with lfs=0 and no git-lfs host tool. Last matching pattern wins.
+archive/ve2/**/*.bin filter= diff= merge= -text
+archive/ve2/**/*.xclbin filter= diff= merge= -text
+archive/ve2/**/*.elf filter= diff= merge= -text
