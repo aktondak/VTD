@@ -83,7 +83,10 @@ def pack_archive(files, output_path, label):
 
 
 def archive_files(root):
-    return [f for f in root.rglob('*') if f.is_file() and f.suffix != '.a']
+    return [
+        f for f in root.rglob('*')
+        if f.is_file() and f.suffix not in {'.a', '.asm'}
+    ]
 
 
 def add_tree(members, root, skip=None):

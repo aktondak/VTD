@@ -64,7 +64,7 @@ Running without folder arguments fails with a usage error. Unknown or path-trave
 - **Flattened structure**: Creates archives with all files at root level
 - **Smart updates**: Only updates files newer than existing archive
 - **Change tracking**: Shows added, removed, and updated files
-- **Automatic exclusion**: Skips `.a` files to prevent self-inclusion
+- **Automatic exclusion**: Skips `.a` files to prevent self-inclusion and `.asm` source files
 
 ### Example Output
 
@@ -128,5 +128,5 @@ python build_archives.py --help
 - Run `build_archives.py` from any working directory; it always targets platform subdirs under `archive/`
 - Archives are stored in their respective platform directories (e.g., `strx/xrt_smi_strx.a`, `ve2/t50/xrt_smi_ve2.a`)
 - All files are flattened to root level in archives (no directory structure preserved)
-- The Python script automatically excludes existing `.a` files to prevent circular inclusion
+- The Python script automatically excludes existing `.a` files to prevent circular inclusion and `.asm` files (assembly sources not needed at runtime)
 - Use the Python script for consistent and automated archive management
